@@ -75,12 +75,10 @@ module.exports = ({ config }) => {
             vkaraTvUrl: tvUrl,
             allowCleartext,
             defaultTvUrl,
-            eas: {
-                // @lehuygiang28/vkara-tv — override with EAS_PROJECT_ID if needed.
-                projectId:
-                    process.env.EAS_PROJECT_ID ||
-                    '2877c9a0-2a40-4bbf-a8d0-067d294e9f3d',
-            },
+            // Fork build: no upstream EAS project. Set EAS_PROJECT_ID to use your own.
+            ...(process.env.EAS_PROJECT_ID
+                ? { eas: { projectId: process.env.EAS_PROJECT_ID } }
+                : {}),
         },
     };
 };

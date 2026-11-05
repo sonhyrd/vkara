@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "vkara": {
-    "defaultTvUrl": "https://vkara.vercel.app/tv"
+    "defaultTvUrl": "https://vkara-family-one.vercel.app/tv"
   },
   "scripts": {
     "start": "EXPO_TV=1 expo start",
