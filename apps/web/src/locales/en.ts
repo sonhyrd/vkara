@@ -328,6 +328,10 @@ export default {
     'videoSearch.refillSearch': 'Fill search field',
 
     'curatedPlaylists.sectionHint': 'Starter playlists to get the party going',
+    'curatedPlaylists.catalogs.bolero': 'Bolero',
+    'curatedPlaylists.catalogs.nhac-vang': 'Golden oldies',
+    'curatedPlaylists.catalogs.song-ca': 'Duets',
+    'curatedPlaylists.catalogs.que-huong': 'Folk & hometown',
     'curatedPlaylists.catalogs.karaoke': 'Karaoke',
     'curatedPlaylists.catalogs.music': 'Music',
     'curatedPlaylists.videoCount': '{count} songs',

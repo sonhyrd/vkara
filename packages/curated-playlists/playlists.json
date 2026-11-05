@@ -2,15 +2,78 @@
     "version": 1,
     "catalogs": [
         {
+            "id": "bolero",
+            "suggestLocales": [
+                "vi"
+            ],
+            "playlists": [
+                "https://www.youtube.com/playlist?list=PLgzHewKXgY4EjItFPSPqSyYUgNMHmPNYp",
+                "https://www.youtube.com/playlist?list=PLdIh-qOAs5X5Mk4AMLbeH5gXTo_KitxM_",
+                "https://www.youtube.com/playlist?list=PLjYHTs7KqIjm1qdnopW4rTVrdKsDZ8L-L",
+                "https://www.youtube.com/playlist?list=PLJ9aVwO1-HtvzDtyJmyd4Yl1rQ_rv7yTn",
+                "https://www.youtube.com/playlist?list=PL8jrADatVgwAuZVrncTGKG8w9sLU4kK2b",
+                "https://www.youtube.com/playlist?list=PLyltANeHB9a_KrYOjfu7o59Te79-iQ1-M",
+                "https://www.youtube.com/playlist?list=PL5hvk-eRyMaRH9S0z2wnK2QLjC6_0EJ6E"
+            ]
+        },
+        {
+            "id": "nhac-vang",
+            "suggestLocales": [
+                "vi"
+            ],
+            "playlists": [
+                "https://www.youtube.com/playlist?list=PLGRd8TNRx8suKiVbnMwZYTpUCvtE3nNYt",
+                "https://www.youtube.com/playlist?list=PLNRClrfjFJN9Fdj6ZemCXhqW2PSKLy2Pf",
+                "https://www.youtube.com/playlist?list=PLNRClrfjFJN9LzryD1zWsPbj8lLcU8XUu",
+                "https://www.youtube.com/playlist?list=PLNRClrfjFJN-QzxR5ONn_0SKQq0USZnpE",
+                "https://www.youtube.com/playlist?list=PLNRClrfjFJN-_t1vI1iVqWWWtqFfRExDZ",
+                "https://www.youtube.com/playlist?list=PL5V8tbIMdjy24KSGpw7pOmN3HAFsfuzXF",
+                "https://www.youtube.com/playlist?list=PLgSmgwtUuWRsUYuvgfC0AZccVVaHn5pFD",
+                "https://www.youtube.com/playlist?list=PLiqx6gupri4uS3Exb2rPwYl8EHEFosZG1",
+                "https://www.youtube.com/playlist?list=PLhdy7MLS8tAEzU1csiIzeRv_PhUNW2pcp",
+                "https://www.youtube.com/playlist?list=PLd3sXMR7QSGtyCViOnbxHKyzChEDNRxbk",
+                "https://www.youtube.com/playlist?list=PLpwKVnqUupyfnf1hVq2ohjBSOlYoGJUlF"
+            ]
+        },
+        {
+            "id": "song-ca",
+            "suggestLocales": [
+                "vi"
+            ],
+            "playlists": [
+                "https://www.youtube.com/playlist?list=PLXod0GC3AURDdlVMb8bMhrwYtwu79OLJI",
+                "https://www.youtube.com/playlist?list=PLNRClrfjFJN-J-xplOboTsy0e9lPoN4AZ",
+                "https://www.youtube.com/playlist?list=PLZ3AG_eExveQFNTmSBlH30abu4A-die7x",
+                "https://www.youtube.com/playlist?list=PLRyK49GJgHFyf37yLS4BluGehRyCRpHDw"
+            ]
+        },
+        {
+            "id": "que-huong",
+            "suggestLocales": [
+                "vi"
+            ],
+            "playlists": [
+                "https://www.youtube.com/playlist?list=PLxpDgeTq2xcRnPhbVVVS1btZgXuvgr_rL",
+                "https://www.youtube.com/playlist?list=PLlMkjcVF3-v_spW_zheTAyo-eEQea1wPa",
+                "https://www.youtube.com/playlist?list=PLWMf_Q598tWElEYA4TY0HhCX43gR0UhgC"
+            ]
+        },
+        {
             "id": "music",
-            "suggestLocales": ["vi", "en"],
+            "suggestLocales": [
+                "vi",
+                "en"
+            ],
             "playlists": [
                 "https://www.youtube.com/watch?v=HX3UcwUYMjM&list=PLRH1bes7ddmWZCJsf02s3WLhtMV2dXbWO"
             ]
         },
         {
             "id": "karaoke",
-            "suggestLocales": ["vi", "en"],
+            "suggestLocales": [
+                "vi",
+                "en"
+            ],
             "playlists": [
                 "https://www.youtube.com/watch?v=B4_ooSM3HDw&list=PLRH1bes7ddmVMYRkmPNJY4lFZsGlAAXbC",
                 "https://www.youtube.com/watch?v=sT49aWnNDpA&list=PLRH1bes7ddmVp0Cpe2OWJxK6zqA2h8CrD",
@@ -19,7 +82,10 @@
         },
         {
             "id": "karaoke",
-            "suggestLocales": ["en", "vi"],
+            "suggestLocales": [
+                "en",
+                "vi"
+            ],
             "playlists": [
                 "https://www.youtube.com/watch?v=o71_MatpYV0&list=PLRH1bes7ddmWO-sNw14I-FxKKvxMujKoc"
             ]

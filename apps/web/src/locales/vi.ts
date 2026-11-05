@@ -325,6 +325,10 @@ export default {
     'videoSearch.refillSearch': 'Điền vào ô tìm kiếm',
 
     'curatedPlaylists.sectionHint': 'Danh sách gợi ý để bắt đầu phát',
+    'curatedPlaylists.catalogs.bolero': 'Bolero · Trữ tình',
+    'curatedPlaylists.catalogs.nhac-vang': 'Nhạc vàng · Danh ca',
+    'curatedPlaylists.catalogs.song-ca': 'Song ca trữ tình',
+    'curatedPlaylists.catalogs.que-huong': 'Quê hương · Dân ca',
     'curatedPlaylists.catalogs.karaoke': 'Karaoke',
     'curatedPlaylists.catalogs.music': 'Nhạc',
     'curatedPlaylists.videoCount': '{count} bài',

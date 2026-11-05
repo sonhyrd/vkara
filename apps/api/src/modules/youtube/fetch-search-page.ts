@@ -7,6 +7,7 @@ import {
 } from 'youtubei';
 import { SearchProto, optionsToProto } from 'youtubei/dist/esm/youtube/SearchResult/proto/index.js';
 
+import { expandViAbbreviation } from './expand-vi-abbreviation';
 import { extractRendererMetadata, type RendererMetadataMaps } from './renderer-metadata';
 import { postInnertube } from './innertube-post';
 import { asYoutubeRawData } from './youtubei-raw-data';
@@ -64,7 +65,7 @@ export async function fetchSearchInitialPage(
 ): Promise<SearchPageFetchResult> {
     const bufferParams = SearchProto.encode(optionsToProto(options)).finish();
     const response = await postInnertube(client, SEARCH_ENDPOINT, {
-        query,
+        query: expandViAbbreviation(query),
         params: Buffer.from(bufferParams).toString('base64'),
     });
 

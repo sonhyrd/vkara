@@ -43,6 +43,10 @@ export function CuratedCatalogSection({
                 }
             >
                 {getCuratedCatalogLabel(catalog, {
+                    bolero: t('catalogs.bolero'),
+                    'nhac-vang': t('catalogs.nhac-vang'),
+                    'song-ca': t('catalogs.song-ca'),
+                    'que-huong': t('catalogs.que-huong'),
                     karaoke: t('catalogs.karaoke'),
                     music: t('catalogs.music'),
                 })}
