@@ -56,6 +56,8 @@ export function buildPageMetadata(locale: AppLocale, t: SeoTranslations): Metada
             ],
             apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
         },
+        manifest: '/manifest.webmanifest',
+        appleWebApp: { capable: true, title: 'VKara', statusBarStyle: 'black-translucent' },
         formatDetection: {
             telephone: false,
         },
