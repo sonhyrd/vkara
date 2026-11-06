@@ -68,7 +68,7 @@ export function NowPlayingArtwork({
     const ringClass = isPlaying
         ? isLive
             ? 'ring-red-500 shadow-[0_0_0_1px_hsl(0_72%_51%/0.35),0_0_14px_hsl(0_72%_51%/0.22)]'
-            : 'ring-primary shadow-[0_0_0_1px_hsl(var(--primary)/0.35),0_0_14px_hsl(var(--primary)/0.2)]'
+            : 'ring-primary shadow-[0_0_0_1px_color-mix(in_oklch,var(--primary)_35%,transparent),0_0_14px_color-mix(in_oklch,var(--primary)_20%,transparent)]'
         : 'ring-muted-foreground/35 shadow-none';
 
     return (

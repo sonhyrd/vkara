@@ -180,7 +180,7 @@ export function VoiceSearchOverlay({
                                 'hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
                                 isProcessing && 'pointer-events-none opacity-90',
                                 isRecording
-                                    ? 'bg-destructive text-destructive-foreground shadow-[0_4px_24px_hsl(var(--destructive)/0.35)]'
+                                    ? 'bg-destructive text-destructive-foreground shadow-[0_4px_24px_color-mix(in_oklch,var(--destructive)_35%,transparent)]'
                                     : 'border-2 border-border bg-muted text-foreground shadow-sm',
                             )}
                             aria-label={micAriaLabel}

@@ -22,7 +22,7 @@ export const SCRUB_SLIDER_CLASS = cn(
     '[&>span:first-child]:after:absolute [&>span:first-child]:after:left-0 [&>span:first-child]:after:right-0',
     '[&>span:first-child]:after:top-1/2 [&>span:first-child]:after:h-1 [&>span:first-child]:after:-translate-y-1/2',
     '[&>span:first-child]:after:rounded-full',
-    '[&>span:first-child]:after:bg-[linear-gradient(to_right,hsl(var(--primary))_var(--scrub-position,0%),hsl(var(--primary)/0.2)_var(--scrub-position,0%))]',
+    '[&>span:first-child]:after:bg-[linear-gradient(to_right,var(--primary)_var(--scrub-position,0%),color-mix(in_oklch,var(--primary)_20%,transparent)_var(--scrub-position,0%))]',
     '[&>span:first-child]:after:origin-center [&>span:first-child]:after:transition-transform',
     '[&>span:first-child]:after:duration-150 [&>span:first-child]:after:ease-out',
     '[&>span:first-child]:after:content-[""] motion-reduce:[&>span:first-child]:after:transition-none',
