@@ -349,6 +349,12 @@ body {
     html {
         height: 100%;
     }
+    /* Phones: scale every rem-based size up 12.5% (TV uses html.tv-root-scale). */
+    @media (max-width: 640px) {
+        html {
+            font-size: 18px;
+        }
+    }
     body {
         @apply bg-background text-foreground min-h-dvh-screen;
         overscroll-behavior: none;

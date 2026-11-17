@@ -34,37 +34,28 @@ function makeDetails(overrides: Partial<PlaylistDetailsResponse> = {}): Playlist
 }
 
 describe('resolveCuratedPlaylistThumbnail', () => {
-    it('returns real playlist thumbnail URL when present', () => {
-        const url = 'https://i.ytimg.com/vi/abc123/mqdefault.jpg';
-        const details = makeDetails({
-            playlist: {
-                id: PLAYLIST_ID,
-                title: 'Test',
-                videoCount: 1,
-                thumbnails: [{ url, width: 320, height: 180 }],
-            },
-        });
-
-        expect(resolveCuratedPlaylistThumbnail(details, PLAYLIST_ID)).toBe(url);
-    });
-
-    it('skips synthetic playlist-id video thumb and uses first video', () => {
-        const bogus = `https://i.ytimg.com/vi/${PLAYLIST_ID}/mqdefault.jpg`;
+    it('ignores playlist art and uses first video thumbnail with its id', () => {
         const videoUrl = 'https://i.ytimg.com/vi/dQw4w9WgXcQ/mqdefault.jpg';
         const details = makeDetails({
             playlist: {
                 id: PLAYLIST_ID,
                 title: 'Test',
                 videoCount: 1,
-                thumbnails: [{ url: bogus, width: 320, height: 180 }],
+                thumbnails: [
+                    { url: 'https://i.ytimg.com/vi/x/hqdefault.jpg?sqp=a&rs=b', width: 480, height: 270 },
+                ],
             },
             videos: [makeVideo('dQw4w9WgXcQ', [{ url: videoUrl, width: 320, height: 180 }])],
         });
 
-        expect(resolveCuratedPlaylistThumbnail(details, PLAYLIST_ID)).toBe(videoUrl);
+        expect(resolveCuratedPlaylistThumbnail(details)).toEqual({
+            src: videoUrl,
+            videoId: 'dQw4w9WgXcQ',
+        });
     });
 
-    it('returns null when no details', () => {
-        expect(resolveCuratedPlaylistThumbnail(undefined, PLAYLIST_ID)).toBeNull();
+    it('returns null when no details or no videos', () => {
+        expect(resolveCuratedPlaylistThumbnail(undefined)).toBeNull();
+        expect(resolveCuratedPlaylistThumbnail(makeDetails())).toBeNull();
     });
 });

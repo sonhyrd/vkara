@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { ListMusic } from 'lucide-react';
 
 import { VIDEO_LIST_ROW_HEIGHT } from '@/components/pages/youtube/VideoListItem';
 import { VideoListThumbnail } from '@/components/pages/youtube/video-list-thumbnail';
+import { YouTubeThumbnailImage } from '@/components/youtube-thumbnail-image';
 import { useScopedI18n } from '@/locales/client';
 import { resolveCuratedPlaylistThumbnail } from '@/lib/curated-playlist-thumbnail';
 import { usePlaylistDetails } from '@/hooks/use-playlist-details';
@@ -85,7 +85,7 @@ export function CuratedPlaylistCard({
 
     const title = details?.playlist.title;
     const videoCount = details?.playlist.videoCount;
-    const thumbUrl = resolveCuratedPlaylistThumbnail(details, listId);
+    const thumb = resolveCuratedPlaylistThumbnail(details);
     const hasError = Boolean(error);
     const ariaLabel = isLoading
         ? t('untitledPlaylist')
@@ -106,14 +106,15 @@ export function CuratedPlaylistCard({
                 )}
             >
                 <div className="relative aspect-video w-full overflow-hidden bg-muted">
-                    {thumbUrl ? (
-                        <Image
-                            src={thumbUrl}
+                    {thumb ? (
+                        <YouTubeThumbnailImage
+                            src={thumb.src}
+                            videoId={thumb.videoId}
+                            size="list"
                             alt=""
                             fill
                             sizes="184px"
                             className="object-cover"
-                            unoptimized
                         />
                     ) : (
                         <div className="flex aspect-video items-center justify-center">
@@ -148,7 +149,8 @@ export function CuratedPlaylistCard({
                 style={{ height: VIDEO_LIST_ROW_HEIGHT }}
             >
                 <VideoListThumbnail
-                    src={thumbUrl}
+                    src={thumb?.src}
+                    videoId={thumb?.videoId}
                     fallback={<CuratedPlaylistThumbPlaceholder isLoading={isLoading} />}
                 />
                 <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-center gap-0.5 overflow-hidden">

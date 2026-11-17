@@ -1,32 +1,19 @@
 import type { PlaylistDetailsResponse } from '@vkara/youtube';
 import { getYouTubeThumbnailUrl } from '@vkara/youtube';
 
-/** True when URL was synthesized with a playlist list id as a video id (invalid image). */
-function isSyntheticPlaylistThumb(url: string, playlistId: string): boolean {
-    return url.includes(`/vi/${playlistId}/`);
-}
-
 /**
- * Playlist card image: prefer real playlist art from YouTube, else first track thumbnail.
+ * Playlist card image: first track's thumbnail. YouTube's playlist art is either a
+ * synthetic `/vi/<listId>/` URL (404) or a signed `?sqp=…&rs=…` URL that expires in cache.
  */
 export function resolveCuratedPlaylistThumbnail(
     details: PlaylistDetailsResponse | undefined,
-    listId: string,
-): string | null {
-    if (!details) {
+): { src: string; videoId: string } | null {
+    const firstVideo = details?.videos[0];
+    if (!firstVideo) {
         return null;
     }
-
-    for (const variant of details.playlist.thumbnails ?? []) {
-        if (variant.url && !isSyntheticPlaylistThumb(variant.url, listId)) {
-            return variant.url;
-        }
-    }
-
-    const firstVideo = details.videos[0];
-    if (firstVideo) {
-        return getYouTubeThumbnailUrl(firstVideo.thumbnails, 'list', firstVideo.id);
-    }
-
-    return null;
+    return {
+        src: getYouTubeThumbnailUrl(firstVideo.thumbnails, 'list', firstVideo.id),
+        videoId: firstVideo.id,
+    };
 }
